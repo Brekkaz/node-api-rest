@@ -1,5 +1,6 @@
 const express = require('express')
 const bodyparser = require('body-parser')
+var cors = require('cors')
 const util = require('util')
 const app = express()
 const api = express.Router()
@@ -24,18 +25,10 @@ var vinculos = [
 ]
 
 //middlewares
+app.use(cors())
 app.use(bodyparser.urlencoded({ extended: false }))
 app.use(bodyparser.json())
 app.use('/api', api)
-
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
-  //res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
-  next();
-});
-
 
 //server
 app.listen(port, () => {
