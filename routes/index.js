@@ -15,11 +15,7 @@ api.post('/vinculos', vinculosCtrl.createVinculo)
 
 //Test
 api.get('/test', (req, res) => {
-    return res.status(200).send({
-        1 : req.protocol,
-        2 : req.secure,
-        3: util.inspect(req.connection)
-    })
+    return res.status(200).send(req.protocol)
 })
 
 /*api.put('/user/:userId', userCtrl.updateUser)
