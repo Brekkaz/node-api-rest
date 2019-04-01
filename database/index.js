@@ -1,12 +1,12 @@
 //users 1(admin), 2(trainer), 3(cliente)
 var users = [
-  { id:1, nombre:'ad-boss', email:'ad-boss@test.com', contrasena:'123456', rol:1 },
-  { id:2, nombre:'tr-jhon', email:'tr-jhon@test.com', contrasena:'123456', rol:2 },
-  { id:3, nombre:'tr-doe', email:'tr-doe@test.com', contrasena:'123456', rol:2 },
-  { id:4, nombre:'tr-ipsum', email:'tr-ipsum@test.com', contrasena:'123456', rol:2 },
-  { id:5, nombre:'cl-dummy', email:'cl-dummy@test.com', contrasena:'123456', rol:3 },
-  { id:6, nombre:'cl-nick', email:'cl-nick@test.com', contrasena:'123456', rol:3 },
-  { id:7, nombre:'cl-lorem', email:'cl-lorem@test.com', contrasena:'123456', rol:3 },
+  { id:1, nombre:'admin', email:'admin@test.com', contrasena:'123456', rol:1 },
+  { id:2, nombre:'trainer1', email:'trainer1@test.com', contrasena:'123456', rol:2 },
+  { id:3, nombre:'trainer2', email:'trainer2@test.com', contrasena:'123456', rol:2 },
+  { id:4, nombre:'trainer3', email:'trainer3@test.com', contrasena:'123456', rol:2 },
+  { id:5, nombre:'cliente1', email:'cliente1@test.com', contrasena:'123456', rol:3 },
+  { id:6, nombre:'cliente2', email:'cliente2@test.com', contrasena:'123456', rol:3 },
+  { id:7, nombre:'cliente3', email:'cliente3@test.com', contrasena:'123456', rol:3 },
 ]
 
 var vinculos = [

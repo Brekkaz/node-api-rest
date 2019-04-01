@@ -42,6 +42,16 @@ function deleteUser(req, res) {
   return res.status(200).send({ status: 200, message: 'el usuario se ha eliminado' })
 }
 
+function readUserById(req, res) {
+  return res.status(200).send({
+    user:db.users.find(user => user.id == req.params.userId)
+  })
+}
+
+function readUsersByRol(req, res) {
+  res.status(200).send(utilsService.pagination(req, db.users.filter(user => user.rol == req.params.rolId)))
+}
+
 function loginUser(req, res) {
   let user = db.users.find(user => user.email == req.body.email && user.contrasena == req.body.contrasena)
   
@@ -53,9 +63,6 @@ function loginUser(req, res) {
   return res.status(200).send({ token: usersService.createToken(user) })
 }
 
-function readUsersByRol(req, res) {
-  res.status(200).send(utilsService.pagination(req, db.users.filter(user => user.rol == req.params.rolId)))
-}
 
 module.exports = {
   createUser,
@@ -63,5 +70,6 @@ module.exports = {
   readUsers,
   readUsersByRol,
   updateUser,
-  deleteUser
+  deleteUser,
+  readUserById
 }
