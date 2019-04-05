@@ -1,7 +1,7 @@
 const db = require('../database')
 const utilsService = require('../services/utils')
 
-function createVinculo (req, res) {  
+function createCita (req, res) {  
   let vinculo =  { 
     id: db.vinculos.length + 1,
     idtrainer: req.body.idtrainer,
@@ -28,11 +28,10 @@ function readVinculos (req, res) {
 }
 
 function updateVinculo (req, res) {
-  let trainerId = req.params.trainerId
-  let clienteId = req.params.clienteId
-  
+  let vinculoId = req.params.vinculoId
+
   db.vinculos.map(vinculo => {
-    if (vinculo.idtrainer == trainerId && vinculo.clienteId == clienteId) {
+    if (vinculo.id == vinculoId) {
       vinculo.idtrainer = req.body.idtrainer,
       vinculo.idcliente = req.body.idcliente
     }
@@ -42,10 +41,8 @@ function updateVinculo (req, res) {
 }
 
 function deleteVinculo (req, res) {
-  let trainerId = req.params.trainerId
-  let clienteId = req.params.clienteId
-
-  db.vinculos = db.vinculos.filter(vinculo => !(vinculo.idtrainer == trainerId && vinculo.clienteId == clienteId))
+  let vinculoId = req.params.vinculoId
+  db.vinculos = db.vinculos.filter(vinculo => vinculo.id != vinculoId)
 
   return res.status(200).send({ status: 200, message: 'el vinculo se ha eliminado' })
 }

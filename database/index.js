@@ -15,7 +15,14 @@ var vinculos = [
   { id:3, idtrainer:3, idcliente:6 }
 ]
 
+var citas = [
+  { id:1, idtrainer:2, idcliente:1, fecha:1, hora:1, estado:1 },
+  { id:1, idtrainer:2, idcliente:1, fecha:1, hora:1, estado:1 },
+  { id:1, idtrainer:2, idcliente:1, fecha:1, hora:1, estado:1 }
+]
+
 module.exports = {
   users,
-  vinculos
+  vinculos,
+  citas
 }
