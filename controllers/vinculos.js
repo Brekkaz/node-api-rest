@@ -32,7 +32,7 @@ function updateVinculo (req, res) {
   let clienteId = req.params.clienteId
   
   db.vinculos.map(vinculo => {
-    if (vinculo.idtrainer == trainerId && vinculo.clienteId == clienteId) {
+    if (vinculo.idtrainer == trainerId && vinculo.idcliente == clienteId) {
       vinculo.idtrainer = req.body.idtrainer,
       vinculo.idcliente = req.body.idcliente
     }
@@ -45,9 +45,15 @@ function deleteVinculo (req, res) {
   let trainerId = req.params.trainerId
   let clienteId = req.params.clienteId
 
-  db.vinculos = db.vinculos.filter(vinculo => !(vinculo.idtrainer == trainerId && vinculo.clienteId == clienteId))
+  db.vinculos = db.vinculos.filter(vinculo => !(vinculo.idtrainer == trainerId && vinculo.idcliente == clienteId))
 
   return res.status(200).send({ status: 200, message: 'el vinculo se ha eliminado' })
+}
+
+function readVinculoByIds(req, res) {
+  return res.status(200).send({
+    vinculo:db.vinculos.find(vinculo => vinculo.idtrainer == req.params.trainerId && vinculo.idcliente == req.params.clienteId)
+  })
 }
 
 function readVinculosOfUser (req, res) {
@@ -66,14 +72,6 @@ module.exports = {
   readVinculos,
   updateVinculo,
   deleteVinculo,
+  readVinculoByIds,
   readVinculosOfUser
 }
-/*
-
-
-function readUsersByRol(req, res) {
-  res.status(200).send(utilsService.pagination(req, db.users.filter(user => user.rol == req.params.rolId)))
-}
-
-
-*/

@@ -16,9 +16,8 @@ var vinculos = [
 ]
 
 var citas = [
-  { id:1, idtrainer:2, idcliente:1, fecha:1, hora:1, estado:1 },
-  { id:1, idtrainer:2, idcliente:1, fecha:1, hora:1, estado:1 },
-  { id:1, idtrainer:2, idcliente:1, fecha:1, hora:1, estado:1 }
+  { id:1, idtrainer:2, idcliente:5, fecha:"2019-04-09", hora:"18:04", estado:1 },
+  { id:1, idtrainer:2, idcliente:4, fecha:"2019-04-09", hora:"18:00", estado:1 },
 ]
 
 module.exports = {
