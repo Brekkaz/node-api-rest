@@ -5,9 +5,12 @@ const usersService = require('../services/users')
 function createUser(req, res) {
   let user = {
     id: db.users.length + 1,
+    apellido = req.body.apellido,
     nombre: req.body.nombre,
     email: req.body.email,
     contrasena: req.body.contrasena,
+    direccion = req.body.direccion,
+    celular = req.body.celular,
     rol: req.body.rol
   }
 
@@ -26,8 +29,11 @@ function updateUser(req, res) {
   db.users.map(user => {
     if (user.id == userId) {
       user.nombre = req.body.nombre,
+      user.apellido = req.body.apellido,
       user.email = req.body.email,
       user.contrasena = req.body.contrasena,
+      user.direccion = req.body.direccion,
+      user.celular = req.body.celular,
       user.rol = req.body.rol
     }
   })
