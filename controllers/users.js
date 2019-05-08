@@ -5,12 +5,12 @@ const usersService = require('../services/users')
 function createUser(req, res) {
   let user = {
     id: db.users.length + 1,
-    apellido = req.body.apellido,
+    apellido: req.body.apellido,
     nombre: req.body.nombre,
     email: req.body.email,
     contrasena: req.body.contrasena,
-    direccion = req.body.direccion,
-    celular = req.body.celular,
+    direccion: req.body.direccion,
+    celular: req.body.celular,
     rol: req.body.rol
   }
 
