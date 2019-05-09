@@ -58,6 +58,18 @@ function updateCita (req, res) {
   return res.status(200).send({ status: 200, message: 'la cita se ha actualizado' })
 }
 
+function cancelarCita (req, res) {
+  let citaId = req.params.citaId
+
+  db.citas.map(cita => {
+    if (cita.id == citaId) {
+      cita.estado = 3
+    }
+  })
+
+  return res.status(200).send({ status: 200, message: 'la cita se ha cancelado' })
+}
+
 function deleteCita (req, res) {
   let citaId = req.params.citaId
   db.citas = db.citas.filter(cita => cita.id != citaId)
@@ -78,5 +90,6 @@ module.exports = {
   createCita,
   updateCita,
   deleteCita,
-  readCitaById
+  readCitaById,
+  cancelarCita
 }
