@@ -7,6 +7,7 @@ var users = [
   { id:5, nombre:'cliente1', apellido:'cliente1', email:'cliente1@test.com', contrasena:'123456', direccion:'calle 1 #1-2', celular:3012223333, rol:3 },
   { id:6, nombre:'cliente2', apellido:'cliente2', email:'cliente2@test.com', contrasena:'123456', direccion:'calle 1 #1-2', celular:3012223333, rol:3 },
   { id:7, nombre:'cliente3', apellido:'cliente3', email:'cliente3@test.com', contrasena:'123456', direccion:'calle 1 #1-2', celular:3012223333, rol:3 },
+  { id:8, nombre:'cliente4', apellido:'cliente4', email:'cliente4@test.com', contrasena:'123456', direccion:'calle 1 #1-2', celular:3012223333, rol:3 }
 ]
 
 var vinculos = [
